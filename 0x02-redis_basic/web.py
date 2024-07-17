@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Implement an expiring web cache"""
+"""Implement an expiring web cache and tracker"""
 from datetime import timedelta
 from typing import Callable
 import requests
@@ -25,6 +25,6 @@ def cache_track_response(method: Callable):
 
 @cache_track_response
 def get_page(url: str) -> str:
-    """Return HTML content of the response of the url"""
+    """Return HTML content of the `url` specified"""
     response = requests.get(url)
     return response.text
